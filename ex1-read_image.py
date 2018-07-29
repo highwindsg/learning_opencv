@@ -16,4 +16,3 @@ cv2.imwrite('house1gray.png', img)
 
 #and after saving the new filename, will then close the gray picture file
 cv2.destroyAllWindows()
-
