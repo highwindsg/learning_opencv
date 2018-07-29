@@ -3,6 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 print("This is a opencv exercise to convert a file to grayscale and save in png format.")
+print("Select the grayscale image and press any key to proceed.")
 #read the picture in grayscale first
 img = cv2.imread('house1.jpg', cv2.IMREAD_GRAYSCALE)
 
