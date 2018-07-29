@@ -1,3 +1,5 @@
+# Tutorial from https://pythonprogramming.net/loading-images-python-opencv-tutorial/
+
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
