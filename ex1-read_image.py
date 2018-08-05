@@ -16,6 +16,7 @@ print("Select the grayscale image and press any key to proceed.")
 img = cv2.imread('watch.jpg', 0)
 
 # This will display the image in grayscale,
+# and we use cv2.imshow(title,image) to show the image.
 cv2.imshow('image',img)
 
 # Click on the gray picture and waiting for user to press any key
