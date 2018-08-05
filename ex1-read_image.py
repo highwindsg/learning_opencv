@@ -6,17 +6,24 @@ from matplotlib import pyplot as plt
 
 print("This is a opencv exercise to convert a file to grayscale and save in png format.")
 print("Select the grayscale image and press any key to proceed.")
-#read the picture in grayscale first
-img = cv2.imread('house1.jpg', cv2.IMREAD_GRAYSCALE)
+# Read the picture in grayscale first
+# as the default is going to be IMREAD_COLOR
+#img = cv2.imread('house1.jpg', cv2.IMREAD_GRAYSCALE)
 
-#this will display the image in grayscale
+# Rather than using the IMREAD_COLOR, you can also use numbers
+# For the second parameter, you can use -1, 0 or 1
+# Color is 1, grayscale is 0 and unchanged is -1
+img = cv2.imread('watch.jpg', 0)
+
+# This will display the image in grayscale,
 cv2.imshow('image',img)
 
-#click on the gray picture and waiting for user to press any key
+# Click on the gray picture and waiting for user to press any key
 cv2.waitKey(0)
 
-#once any key is pressed, cv2 will save to the new filename
-cv2.imwrite('house1gray.png', img)
+# Once any key is pressed, cv2 will save to the new filename
+#cv2.imwrite('house1gray.png', img)
+cv2.imwrite('watch.png', img)
 
-#and after saving the new filename, will then close the gray picture file
+# And after saving the new filename, will then close the gray picture file
 cv2.destroyAllWindows()
