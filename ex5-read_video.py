@@ -7,12 +7,13 @@ import numpy as np
 cap = cv2.VideoCapture(0)
 
 # fourcc means four character codec & use XVID codec to write the video.
+#fourcc = cv2.VideoWriter_fourcc(*'XVID')
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
 
 # Therefore out file video writes to output.avi with codec of 20 fps at resolution 640x480.
 out = cv2.VideoWriter('output.avi', fourcc, 20.0, (640,480))
 
-while True:
+while(True):
 # So while there is a return captured picture frame,
 # the while true loop will continue to read the picture frame.
     ret, frame = cap.read()
@@ -29,7 +30,7 @@ while True:
 # will therefore require the user to enter a CTRL-C or q to break the loop.
 # But if user press & hold the spacebar key, then the image will continue to refresh
 # frame by frame.
-    if cv2.waitKey(0) & 0xFF == ord('q'):    # this line requires user to press q to quit.
+    if cv2.waitKey(1) & 0xFF == ord('q'):    # this line requires user to press q to quit.
     #if cv2.waitKey(0):    # this line requires user to press any key to quit.
         break
 
