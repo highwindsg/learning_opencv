@@ -8,7 +8,7 @@ img = cv2.imread('watch.jpg', cv2.IMREAD_COLOR)
 
 # Start by drawing a line on the image file that was read in earlier.
 # Line starts at location (0,0), ends at (150,150).
-# (0,0) means location (x,y) which is the top left corner of the image frame.
+# (0,0) means location (x,y) or (row,column) which is the top left corner of the image frame.
 # Therefore the line draw from top left and down to center of the frame.
 #
 # And color of the line :
