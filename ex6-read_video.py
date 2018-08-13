@@ -1,3 +1,5 @@
+# https://pythonprogramming.net/drawing-writing-python-opencv-tutorial/?completed=/loading-video-python-opencv-tutorial/
+
 import cv2
 import numpy as np
 
