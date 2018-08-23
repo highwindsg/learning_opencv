@@ -3,7 +3,7 @@
 import cv2
 import numpy as np
 
-# Imnage file to read in, and read in as color
+# Image file to read in, and read in as color
 img = cv2.imread('watch.jpg', cv2.IMREAD_COLOR)
 
 # Start by drawing a line on the image file that was read in earlier.
@@ -24,16 +24,23 @@ cv2.line(img, (0,0), (150,150), (255,255,255), 15)
 # Drawing a rectangle.
 cv2.rectangle(img, (15,25), (200,150), (0,255,0), 5)
 
-# To show/display the image that we drew the line on.
-cv2.imshow('image', img)
-
 # To draw a circle.
 # (100,63) is the center of the circle
 # 55 is the radius of the circle
 # (0,0,255) is red color
 # -1 means the circle will be fill-in the color of the circle.
 cv2.circle(img, (100,63), 55, (0,0,255), -1)
+pts = np.array([[10,5],[20,30],[70,20],[50,10]], np.int32)      # An array of points.
+#pts = pts.reshape((-1,1,2))
+cv2.polylines(img, [pts], True, (0,255,255), 3)     # 'True' here means if you want to connect the final points.
 
+font = cv2.FONT_HERSHEY_SIMPLEX     # set the cv2 font type.
+# To put the text on the image with he actual wordings of 'OpenCV Tuts!'.
+# Start at location (0,130) with font size 1.2 and color (200,255,255) with bold set to 5.
+cv2.putText(img, 'OpenCV Tuts!', (0,130), font, 1.2, (200,255,255), 5, cv2.LINE_AA)
+
+# To show/display the image that we drew the line on.
+cv2.imshow('image', img)
 # Wait for user to press any key before closing all image window.
 cv2.waitKey(0)
 cv2.destroyAllWindows()
