@@ -7,10 +7,11 @@ def diffImg(t0, t1, t2):                # Function to calculate difference betwe
     return cv2.bitwise_and(d1, d2)
 
 # threshold - how much a pixel has to change by to be marked as "changed".
-threshold = 120000                      # Threshold for triggering detection. eg. 120000(Rpi),701500(iMac),81500(default)
+threshold = 120000                      # Threshold for triggering detection.
+                                        # eg. 120000(Rpi),701500(iMac),81500(default)
 cam = cv2.VideoCapture(0)               # Lets initialize capture on webcam
 
-winName = "Movement Indicator"	        # comment to hide window, if not necessary to run
+winName = "Movement Indicator"          # comment to hide window, if not necessary to run
 cv2.namedWindow(winName)		# comment to hide window, if not necessary to run
 
 # Read three images first:
@@ -21,7 +22,7 @@ t_plus = cv2.cvtColor(cam.read()[1], cv2.COLOR_RGB2GRAY)
 timeCheck = datetime.now().strftime('%Ss')
 
 while True:
-    cv2.imshow(winName, cam.read()[1])    # comment to hide window
+    cv2.imshow(winName, cam.read()[1])  # comment to hide window
     if cv2.countNonZero(diffImg(t_minus, t, t_plus)) > threshold and timeCheck != datetime.now().strftime('%Ss'):
       # dimg=diffImg(t_minus, t, t_plus)
         dimg = cam.read()[1]
@@ -34,5 +35,5 @@ while True:
 
     key = cv2.waitKey(10)
     if key == 27:
-        cv2.destroyWindow(winName)	    # comment to hide window
+        cv2.destroyWindow(winName)      # comment to hide window
         break
